@@ -401,3 +401,20 @@ button[aria-label="Send a gift"] {
         --guildbar-avatar-size: var(--guildbar-folder-size) !important;
     }
 }
+
+/*  Temporary Server list fix */
+.folderPreview__48112 {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    height: calc(var(--guildbar-folder-size) - var(--custom-folder-preview-padding)*2);
+    width: calc(var(--guildbar-folder-size) - var(--custom-folder-preview-padding)*2);
+    justify-content: center;
+    align-content: center;
+}
+
+.wrapper_cc5dd2 {
+    height: 48px !important;
+    width: 48px !important;
+}
