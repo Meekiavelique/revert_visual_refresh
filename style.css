@@ -1,8 +1,22 @@
+@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
+
+:root {
+    --guildbar-avatar-size: 48px;
+    --blob-scale: 48;
+    --guildbar-folder-size: var(--guildbar-avatar-size);
+    --folder-blob-scale: var(--blob-scale);
+    --custom-guild-list-padding: calc((72px - var(--guildbar-avatar-size)) / 2);
+    --subtle-border-radius: 4px;
+    --background-surface-high: var(--background-secondary) !important;
+    --background-code: rgb(41, 44, 51) !important;
+    --custom-chat-input-margin-bottom: 10px !important;
+}
+
 .visual-refresh {
     div.subtitleContainer_f75fb0,
     main.container__133bf section.container__9293f {
         width: calc(100% - 172px);
-        border-radius: 4px; /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     div.page_c48ade {
@@ -17,7 +31,7 @@
 
     div.base_c48ade {
         grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
-        border-radius: 4px; /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
 
         &:has(div.bar_c38106 > div.trailing_c38106 > *:nth-child(3)) {
             & div.subtitleContainer_f75fb0,
@@ -33,7 +47,7 @@
             right: anchor(right);
             width: anchor-size(width);
             padding: 0;
-            border-radius: 4px; /* Added subtle border radius */
+            border-radius: var(--subtle-border-radius);
         }
 
         & div.trailing_c38106 {
@@ -52,96 +66,33 @@
 
     ul[data-list-id="guildsnav"] > div.itemsContainer_ef3116 {
         margin-top: 16px;
-        border-radius: 4px; /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     div.topic__6ec1a {
         -webkit-app-region: no-drag;
-        border-radius: 4px; /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
-}
-
-.visual-refresh .panels_c48ade {
-    right: var(--space-xs) !important;
-    left: auto;
-    bottom: var(--space-xs);
-    width: calc(100% - var(--space-xs) * 2 - var(--custom-guild-list-width));
-    border-radius: 4px; /* Added subtle border radius */
-}
-
-.visual-refresh .guilds_c48ade {
-    margin-bottom: 0;
-    border-radius: 4px; /* Added subtle border radius */
-}
-
-.visual-refresh .base_c48ade {
-    grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
-}
-
-button[aria-label="Send a gift"] {
-    display: none;
-}
-
-@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
-
-:root {
-    --guildbar-avatar-size: 48px;
-    --blob-scale: 48;
-
-    --guildbar-folder-size: var(--guildbar-avatar-size);
-    --folder-blob-scale: var(--blob-scale);
-
-    --custom-guild-list-padding: calc((72px - var(--guildbar-avatar-size)) / 2);
-
-    /* Define a consistent border-radius variable */
-    --subtle-border-radius: 4px;
-
-    /*Remove the hovering color*/
-    /*--background-message-hover: rbga(0,0,0,0) !important;*/
-
-    /*Change hight color of embed*/
-    --background-surface-high: var(--background-secondary) !important;
-
-    /*Change background color for code*/
-    --background-code: rgb(41, 44, 51) !important;
-
-    --custom-chat-input-margin-bottom: 10px !important;
-}
-
-.visual-refresh {
-
-    /*fix the gap at the bootom of the text area*/
 
     [class*="channelTextArea_"] {
         margin-bottom: 11px;
     }
 
-    /* Changed from 5px to 4px for more subtle border radius */
-
     button:not([aria-label="Send a gift"]) {
         border-radius: var(--subtle-border-radius) !important;
     }
-
 
     input, textarea {
         border-radius: var(--subtle-border-radius) !important;
     }
 
-
-    /*div[class*="panel"], section, article {
-        border-radius: var(--subtle-border-radius) !important;
-    }*/
-
-
     div[class*="modal"], div[class*="popout"], div[class*="menu"], div[class*="container"] {
         border-radius: var(--subtle-border-radius) !important;
     }
 
-
     div[class*="message"] {
         border-radius: var(--subtle-border-radius) !important;
     }
-
 
     .avatar-1BDn8e img,
     .avatar-2e8lTP img,
@@ -151,27 +102,17 @@ button[aria-label="Send a gift"] {
         border-radius: 50% !important;
     }
 
-
     ::-webkit-scrollbar-thumb {
         border-radius: var(--subtle-border-radius) !important;
     }
-
-    /* Modify these to now have the subtle border radius instead of no radius */
 
     div[class*="tooltip"] {
         border-radius: var(--subtle-border-radius) !important;
     }
 
-
     div[class*="role"] {
         border-radius: var(--subtle-border-radius) !important;
     }
-
-    /* Changed to add a subtle border radius instead of removing it completely */
-    /*div:not(.visual-refresh nav[class*="guilds_"] div) {
-        border-radius: var(--subtle-border-radius) !important;
-        //border-radius: 10px !important;
-    }*/
 
     [class*="reaction__"] {
         border-radius: 11px !important;
@@ -183,20 +124,37 @@ button[aria-label="Send a gift"] {
     }
 
     code {
-        /*border-color: rbg() !important;*/
         color: rgb(136, 142, 150) !important;
     }
 
     [class*="buttons_"] {
-        /*Remove the huge gap between buttons (text bar for example)*/
         gap: 0;
     }
 }
 
+.visual-refresh .panels_c48ade {
+    right: var(--space-xs) !important;
+    left: auto;
+    bottom: var(--space-xs);
+    width: calc(100% - var(--space-xs) * 2 - var(--custom-guild-list-width));
+    border-radius: var(--subtle-border-radius);
+}
+
+.visual-refresh .guilds_c48ade {
+    margin-bottom: 0;
+    border-radius: var(--subtle-border-radius);
+}
+
+.visual-refresh .base_c48ade {
+    grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
+}
+
+button[aria-label="Send a gift"] {
+    display: none;
+}
 
 .visual-refresh nav[class*="guilds_"] {
     defs > path {
-
         d: path("M0 0.464C0 0.301585 0 0.220377 0.0316081 0.158343C0.0594114 0.103776 0.103776 0.0594114 0.158343 0.0316081C0.220377 0 0.301585 0 0.464 0H0.536C0.698415 0 0.779623 0 0.841657 0.0316081C0.896224 0.0594114 0.940589 0.103776 0.968392 0.158343C1 0.220377 1 0.301585 1 0.464V0.536C1 0.698415 1 0.779623 0.968392 0.841657C0.940589 0.896224 0.896224 0.940589 0.841657 0.968392C0.779623 1 0.698415 1 0.536 1H0.464C0.301585 1 0.220377 1 0.158343 0.968392C0.103776 0.940589 0.0594114 0.896224 0.0316081 0.841657C0 0.779623 0 0.698415 0 0.536V0.464Z");
     }
 
@@ -305,34 +263,33 @@ button[aria-label="Send a gift"] {
 
     [class*="scroller__36d07 customTheme_d125d2 auto_d125d2 scrollerBase_d125d2 disableScrollAnchor_d125d2 managedReactiveScroller_d125d2"] {
         background-color: #313338;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     [class*="childContainer"] {
         background-color: #313338;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     [class*="membersWrap_"] {
         background-color: #313338;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     [role*="list"] {
         background-color: #2b2d31;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     .content__99f8c {
         background-color: #2b2d31;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
-
 
     .message__5126c.cozyMessage__5126c.groupStart__5126c.wrapper_c19a55.cozy_c19a55.zalgo_c19a55.hasReply_c19a55,
     div[class*="message"][class*="cozyMessage"][class*="groupStart"][class*="wrapper"][class*="cozy"][class*="zalgo"][class*="hasReply"] {
         background-color: #313338 !important;
-        border-radius: var(--subtle-border-radius) !important; /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius) !important;
     }
 
     [class*="closedFolderIconWrapper__"] {
@@ -347,13 +304,13 @@ button[aria-label="Send a gift"] {
     [class*="tree_ef3116"] {
         gap: 0 !important;
         background-color: #1e1f22 !important;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     [class*="stack_"] {
         gap: 0 !important;
         background-color: #1e1f22 !important;
-        border-radius: var(--subtle-border-radius); /* Added subtle border radius */
+        border-radius: var(--subtle-border-radius);
     }
 
     div:not([class]):has([class*="listItem__"]) {
@@ -364,7 +321,7 @@ button[aria-label="Send a gift"] {
     [class*="isExpanded__"] {
         [class*="folder__"] {
             background-color: var(--background-secondary);
-            border-radius: 18px; /* Added subtle border radius */
+            border-radius: 18px;
         }
 
         [class*="expandedFolderBackground__"] {
@@ -402,7 +359,6 @@ button[aria-label="Send a gift"] {
     }
 }
 
-/*  Temporary Server list fix */
 .folderPreview__48112 {
     box-sizing: border-box;
     display: flex;
