@@ -29,7 +29,7 @@
         }
     }
 
-    div.base_c48ade {
+    div.base__5e434 {
         grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
         border-radius: var(--subtle-border-radius);
 
@@ -60,7 +60,7 @@
         }
     }
 
-    :not(:has(div.page_c48ade > div.chat_f75fb0)) div.base_c48ade > div.bar_c38106 {
+    :not(:has(div.page_c48ade > div.chat_f75fb0)) div.base__5e434 > div.bar_c38106 {
         right: 0 !important;
     }
 
@@ -145,7 +145,7 @@
     border-radius: var(--subtle-border-radius);
 }
 
-.visual-refresh .base_c48ade {
+.visual-refresh .base__5e434 {
     grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
 }
 
